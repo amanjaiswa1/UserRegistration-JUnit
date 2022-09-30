@@ -15,7 +15,11 @@ public class UserRegistration {
 		Pattern pattern = Pattern.compile(FIRST_NAME_PATTERN);
 		Matcher matcher = pattern.matcher(firstName);
 		boolean matchFound = matcher.find();
-		return matchFound;
+		if (!matchFound) {
+			throw new InvalidUserDetailsException("Invalid First Name ",
+					InvalidUserDetailsException.ExceptionType.InvalidFirstNameException);
+		}
+		return true;
 	}
 
 	// Validate last name.
@@ -23,7 +27,11 @@ public class UserRegistration {
 		Pattern pattern = Pattern.compile(LAST_NAME_PATTERN);
 		Matcher matcher = pattern.matcher(lastName);
 		boolean matchFound = matcher.find();
-		return matchFound;
+		if (!matchFound) {
+			throw new InvalidUserDetailsException("Invalid Last Name ",
+					InvalidUserDetailsException.ExceptionType.InvalidLastNameException);
+		}
+		return true;
 	}
 
 	// Validate email.
@@ -31,7 +39,11 @@ public class UserRegistration {
 		Pattern pattern = Pattern.compile(EMAIL_PATTERN);
 		Matcher matcher = pattern.matcher(email);
 		boolean matchFound = matcher.find();
-		return matchFound;
+		if (!matchFound) {
+			throw new InvalidUserDetailsException("Invalid Email ",
+					InvalidUserDetailsException.ExceptionType.InvalidEmailException);
+		}
+		return true;
 	}
 
 	// Validate phone number.
@@ -39,7 +51,11 @@ public class UserRegistration {
 		Pattern pattern = Pattern.compile(PHONE_NUMBER_PATTERN);
 		Matcher matcher = pattern.matcher(phoneNumber);
 		boolean matchFound = matcher.find();
-		return matchFound;
+		if (!matchFound) {
+			throw new InvalidUserDetailsException("Invalid Phone Number ",
+					InvalidUserDetailsException.ExceptionType.InvalidMobileNumberException);
+		}
+		return true;
 	}
 
 	// Validate password.
@@ -47,12 +63,18 @@ public class UserRegistration {
 		Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
 		Matcher matcher = pattern.matcher(password);
 		boolean matchFound = matcher.find();
-		return matchFound;
+		if (!matchFound) {
+			throw new InvalidUserDetailsException("Invalid Password ",
+					InvalidUserDetailsException.ExceptionType.InvalidPasswordException);
+		}
+		return true;
 	}
-	
-	//Test case.
-	public String userRegistrationValidation(String firstName, String lastName, String email, String phoneNumber, String password) {
-		if (validateFirstName(firstName) && validateLastName(lastName) && validateEmail(email)  && validatePhoneNumber(phoneNumber) && validatePassword(password)) {
+
+	// Test case.
+	public String userRegistrationValidation(String firstName, String lastName, String email, String phoneNumber,
+			String password) {
+		if (validateFirstName(firstName) && validateLastName(lastName) && validateEmail(email)
+				&& validatePhoneNumber(phoneNumber) && validatePassword(password)) {
 			return "Happy";
 		} else {
 			return "Sad";
@@ -75,7 +97,7 @@ public class UserRegistration {
 		// Validate phone number.
 		String phoneNumber = "91 1234567890";
 		System.out.println(validatePhoneNumber(phoneNumber));
-		
+
 		// Validate password- exactly one special character.
 		String password;
 		password = "Tekesh1Singh@";
