@@ -22,25 +22,26 @@ public class DetailsVerificationLambdaFunction {
 
 		// Validation of user details by Lambda Function..
 		System.out.println("\nFirst Name");
-		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "Aman");
-		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "aman");
+		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "Tekesh");
+		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "tekesh");
 
 		System.out.println("\nLast Name");
-		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "Khan");
-		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "khan");
+		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "Singh");
+		Verify.output(detailVerification, "^[A-Z][a-z]{2,}", "singh");
 
 		System.out.println("\nEmail ID");
-		Verify.output(detailVerification, "^[a-z0-9]+([.+_-]?[a-z0-9]+)?@[a-z0-9]+[.]([a-z0-9]+[.])?[a-z]{2,}",
-				"aman-khan@gmail.co1.in");
-		Verify.output(detailVerification, "^[a-z0-9]+([.+_-]?[a-z0-9]+)?@[a-z0-9]+[.]([a-z0-9]+[.])?[a-z]{2,}",
-				"aman-khan@gmail.co.in1");
+		Verify.output(detailVerification, "^[a-z0-9]+([.+_-]?[a-z0-9]+)?@{1}[a-z0-9]+[.]([a-z0-9]+[.])?[a-z]{2,}",
+				"tekesh.singh@gmail.co.in");
+		Verify.output(detailVerification, "^[a-z0-9]+([.+_-]?[a-z0-9]+)?@{1}[a-z0-9]+[.]([a-z0-9]+[.])?[a-z]{2,}",
+				"tekesh.singh@gmail.co.in1");
 
 		System.out.println("\nPhone Number");
 		Verify.output(detailVerification, "^[0-9]{1,2} [0-9]{10}", "91 1234567890");
 		Verify.output(detailVerification, "^[0-9]{1,2} [0-9]{10}", "919087654321");
 
 		System.out.println("\nPassword");
-		Verify.output(detailVerification, "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&]{1}).{8,}", "khanAman@1");
-		Verify.output(detailVerification, "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&]{1}).{8,}", "Aman@1");
+		Verify.output(detailVerification, "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}",
+				"Tekesh1Singh@");
+		Verify.output(detailVerification, "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}", "Ts@1");
 	}
 }
