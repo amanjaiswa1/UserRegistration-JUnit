@@ -42,6 +42,6 @@ public class DetailsVerificationLambdaFunction {
 		System.out.println("\nPassword");
 		Verify.output(detailVerification, "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}",
 				"Tekesh1Singh@");
-		Verify.output(detailVerification, "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}", "Ts@1");
+		Verify.output(detailVerification, "^(?=.*[A-Z])(?=.*[0-9])(?=.*[@$!%*?&]{1})[A-Za-z0-9@$!%*?&]{8,}", "Tss@1");
 	}
 }
